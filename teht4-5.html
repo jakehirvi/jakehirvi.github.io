@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>teht4-5</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: auto;
+        }
+        label, input {
+            margin: 10px 0;
+        }
+        button{
+            background-color: saddlebrown;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var age = document.getElementById('age').value;
+
+            if (name == "" || email == "" || age == "") {
+                alert("Kaikki kentät on täytettävä!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Täytä lomake</h1>
+    <form onsubmit="return validateForm()">
+        <label for="name">nimi:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="age">ikä:</label>
+        <input type="number" id="age" name="age">
+
+        <label for="email">sähköposti:</label>
+        <input type="email" id="email" name="email">
+
+        <button id="submit">lähetä</button>
+    </form>
+</body>
+</html>
